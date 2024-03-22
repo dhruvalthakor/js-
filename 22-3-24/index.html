@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            padding: 20px 40px;
+            border: 1px solid rgb(152, 38, 38);
+            color: rgb(245, 245, 245);
+            background-color: rgb(0, 217, 255); 
+            border-radius: 10px;
+           
+            font-size: 1.2rem;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+        button:hover{
+            background-color: rgb(231, 93, 93);
+        }
+    </style>
+</head>
+<body>
+    <div id="btn"></div>
+</body>
+</html>
+<script>
+
+    
+for (let i=0;i<100;i++){
+    
+    let a= document.createElement("img")
+    a.src="https://images.pexels.com/photos/18865653/pexels-photo-18865653/free-photo-of-trees-around-alley.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+    let b= document.createElement("h2")
+    b.innerText="hello";
+    let bt=document.getElementById("btn");
+bt.append(a,b);
+console.log(bt)
+}
+
+</script>
