@@ -92,15 +92,7 @@
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" />
         </div>
-        <div class="form-group">
-          <label for="phone">Phone Number:</label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="enter your number"
-          />
-        </div>
+       
         <div class="form-group">
           <label for="password">Password:</label>
           <input
@@ -113,21 +105,39 @@
         <input type="submit" />
       </form>
     </div>
-    <!-- form data table -->
-    <button style="margin-left: 300px;" id="one">SOrt</button>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Phone Number</th>
-          <th>Password</th>
-        
-        </tr>
-      </thead>
-      <tbody id="tb"></tbody>
-    </table>
+  
   </body>
  
 </html>
-<script src="index.js"></script>
+<script>
+    let form=document.getElementById("myForm") ;
+     let name=document.getElementById("name") ;
+     let email=document.getElementById("email") ;
+     let password=document.getElementById("password") ;
+
+
+
+     
+    form.addEventListener("submit",function(e){
+      e.preventDefault() ;
+    
+    if(name==""){
+      alert("fill the name") ;
+    }else if(email==""){
+      alert("fill the email") ;
+    }else if(password==""){
+      alert("fill the password") ;
+    }else{
+      let obj={
+        name:name.value ,
+        email:email.value ,
+        password:password.value
+      } ;
+      localStorage.setItem("dd",JSON.stringify(obj)) ;
+      window.location.href="login.html"
+    }
+    
+    
+     
+    })
+    </script>
