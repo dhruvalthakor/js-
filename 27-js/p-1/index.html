@@ -7,15 +7,16 @@
 </head>
 <style>
     nav {
-      width: 80%;
+      width: 100%;
       height: auto;
-      background-color: red;
+      background-color: rgb(10, 1, 1);
 
       margin: auto;
       padding: 10px;
       margin-bottom: 50px;
     }
     ul {
+    width: 70%;
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -286,6 +287,7 @@ let DD = [
     let maindiv=document.getElementById("main");
 let arr=[];
     DD.forEach(function(el,ind){
+        
    let div=document.createElement("div");
    let img=document.createElement("img")
     img.src=el.image;
