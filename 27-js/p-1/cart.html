@@ -86,7 +86,17 @@
     h3.innerText=el.title;
     let p=document.createElement("p");
     p.innerText=el.price;
-    div.append(img,h3,p);
+    let btn=document.createElement("button")
+    btn.innerText="remova"
+
+
+
+    btn.addEventListener("click",function(e){
+      
+e.target.parentNode.remove();
+    })
+
+    div.append(img,h3,p ,btn);
 maindiv.append(div);
     })
 </script>

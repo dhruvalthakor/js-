@@ -300,7 +300,19 @@ let arr=[];
     btn.innerText="add to cart"
     
     btn.addEventListener("click",function(){
-        arr.push(el)
+        let store=JSON.parse(localStorage.getItem("cart"))
+
+let check=store.some(function(ele){
+  return ele.id==el.id;
+
+  if(check){
+    alert("alll")
+  }else{
+    store.
+  }
+})
+
+
         localStorage.setItem("cart",JSON.stringify(arr));
         alert("your cart is add");
 
