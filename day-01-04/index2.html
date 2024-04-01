@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js-Exam-2.1</title>
+    <style>
+        .myform {
+            width: 400px;
+            height: 600px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        input {
+            height: 30px;
+            width: 90%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .select {
+            height: 30px;
+            width: 90%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        #div1 {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            text-align: center;
+            border: 3px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" style="text-align: center;" class="myform">
+        <h2>Registration Form</h2>
+        <label for="name">Name</label>
+        <input type="name" id="name"><br><br>
+
+        <label for="email">Email</label>
+        <input type="email" id="email"><br><br>
+
+        <label for="text">Courses</label>
+        <select name="" id="select" class="select">
+            <option value=""> choose all</option>
+            <option value="Full stack">Full stack</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+            <option value="GIM">GIM</option>
+            <option value="ui/ux">ui/ux</option>
+        </select>
+        <br><br>
+
+        <label for="number">Phone Number</label>
+        <input type="number" id="number"><br><br>
+
+        <label for="url">Photo URL</label>
+        <input type="url" id="url"><br><br>
+
+        <button id="btn">Submit</button>]
+    </form>
+    <label for="text">fillter</label><br>
+    <select name=""  class="select" id="one">
+        <option value=""> choose all</option>
+        <option value="Full stack">Full stack</option>
+        <option value="Frontend">Frontend</option>
+        <option value="Backend">Backend</option>
+        <option value="GIM">GIM</option>
+        <option value="ui/ux">ui/ux</option>
+    </select>
+
+    <div id="div1"></div>
+</body>
+
+</html>
+<script>
+    let a = document.getElementById("name");
+    let b = document.getElementById("email");
+    let c = document.getElementById("select");
+
+    let d = document.getElementById("number");
+    let ee = document.getElementById("url");
+
+    let div = document.getElementById("div1");
+
+
+    let btt = document.getElementById("btn");
+    let arr = [];
+    btt.addEventListener("click", abc);
+    function abc(e) {
+        e.preventDefault();
+
+        if (a.value == "") {
+            alert("enter your name");
+        } else if (b.value == "") {
+            alert("enter your email");
+        } else if (c.value == "") {
+            alert("enter your cousers");
+        } else if (ee.value == "") {
+            alert("enter your photo");
+        } else {
+            let obj = {
+                name: a.value,
+                email: b.value,
+                cousers: c.value,
+                phone: d.value,
+                photo: ee.value,
+            };
+
+            arr.push(obj);
+            display(arr);
+
+            console.log(arr);
+        }
+    }
+
+    function display(a) {
+
+        let div2 = document.createElement("div")
+        let an = document.createElement("h2");
+        let ae2 = document.createElement("h2");
+        let ap3 = document.createElement("h2");
+        let ac4 = document.createElement("h2");
+        let ai5 = document.createElement("img");
+        an.innerText = a.value;
+        ae2.innerText = b.value;
+        ap3.innerText = c.value;
+        ac4.innerText = d.value;
+        ai5.src = ee.value
+        ai5.style.width = "350px";
+        ai5.style.height = "200px";
+        ai5.style.objectFit = "cover";
+        ai5.style.borderRadius = "20px";
+        ai5.style.marginTop = "50px";
+        div2.append(ai5, an, ae2, ap3, ac4);
+        div.append(div2)
+
+    }
+
+
+    let fil = document.getElementById("one");
+    fil.addEventListener("change", function () {
+        if (fil.value == "Full stack") {
+            console.log(arr)
+            let newdata = arr.filter(function (el) {
+                return el.cousers == "Full stack"
+            })
+            display(newdata)
+        } else if (fil.value == "Frontend") {
+            let newdata = arr.filter(function (el) {
+                return el.cousers == "Frontend"
+            })
+            display(newdata)
+        } else if (fil.value == "Backend") {
+            let newdata = arr.filter(function (el) {
+                return el.cousers == "Backend"
+            })
+            display(newdata)
+        } else if (fil.value == "GIM") {
+            let newdata = arr.filter(function (el) {
+                return el.cousers == "GIM"
+            })
+            display(newdata)
+        } else if (fil.value == "ui/ux") {
+            let newdata = arr.filter(function (el) {
+                return el.cousers == "ui/ux"
+            })
+            display(newdata)
+        }
+    })
+
+</script>
